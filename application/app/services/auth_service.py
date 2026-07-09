@@ -37,7 +37,8 @@ class AuthService:
         user = User(
             username=username,
             email=email,
-            password_hash=hashed_password
+            password_hash=hashed_password,
+            role="USER"
         )
 
         UserRepository.create(user)
@@ -65,27 +66,30 @@ class AuthService:
             identity=str(user.id),
             additional_claims={
                 "username": user.username,
-                "email": user.email
+                "email": user.email,
+                "role": user.role
             }
         )
+
         refresh_token = create_refresh_token(
-    identity=str(user.id)
-)
+            identity=str(user.id)
+        )
+
         return {
             "user": user,
             "access_token": access_token,
             "refresh_token": refresh_token
         }
-    
+
     @staticmethod
     def get_profile(user_id):
         """
-        Get the authenticated user's profile.
+        Get authenticated user's profile.
         """
 
         user = UserRepository.get_by_id(user_id)
 
         if not user:
-           raise ValueError("User not found.")
+            raise ValueError("User not found.")
 
         return user
