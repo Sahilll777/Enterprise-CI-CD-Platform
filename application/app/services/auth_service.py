@@ -1,3 +1,7 @@
+from flask_jwt_extended import (
+    create_access_token,
+    create_refresh_token
+)
 from werkzeug.security import (
     generate_password_hash,
     check_password_hash
@@ -56,5 +60,32 @@ class AuthService:
             password
         ):
             raise ValueError("Invalid email or password.")
+
+        access_token = create_access_token(
+            identity=str(user.id),
+            additional_claims={
+                "username": user.username,
+                "email": user.email
+            }
+        )
+        refresh_token = create_refresh_token(
+    identity=str(user.id)
+)
+        return {
+            "user": user,
+            "access_token": access_token,
+            "refresh_token": refresh_token
+        }
+    
+    @staticmethod
+    def get_profile(user_id):
+        """
+        Get the authenticated user's profile.
+        """
+
+        user = UserRepository.get_by_id(user_id)
+
+        if not user:
+           raise ValueError("User not found.")
 
         return user

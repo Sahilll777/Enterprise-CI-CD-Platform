@@ -29,3 +29,17 @@ def login():
     """
 
     return AuthController.login()
+
+@auth_bp.route(
+    "/profile",
+    methods=["GET"]
+)
+def profile():
+    return AuthController.profile()
+
+@auth_bp.route(
+    "/refresh",
+    methods=["POST"]
+)
+def refresh():
+    return AuthController.refresh()
