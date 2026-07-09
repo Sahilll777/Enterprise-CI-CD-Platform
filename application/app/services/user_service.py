@@ -50,3 +50,16 @@ class UserService:
         )
 
         return UserRepository.create(user)
+
+    @staticmethod
+    def get_user(user_id):
+        """
+        Retrieve a single user by ID.
+        """
+
+        user = UserRepository.get_by_id(user_id)
+
+        if not user:
+            raise ValueError("User not found.")
+
+        return user

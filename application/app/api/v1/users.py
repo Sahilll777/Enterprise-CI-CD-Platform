@@ -21,3 +21,10 @@ def get_all_users():
 )
 def create_user():
     return UserController.create_user()
+
+@users_bp.route(
+    "/<int:user_id>",
+    methods=["GET"]
+)
+def get_user(user_id):
+    return UserController.get_user(user_id)

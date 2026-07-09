@@ -101,3 +101,29 @@ class UserController:
                 message=str(error),
                 status_code=400
             )
+
+    @staticmethod
+    @jwt_required()
+    @roles_required("ADMIN")
+    def get_user(user_id):
+        """
+        Return one user.
+        """
+        try:
+            user = UserService.get_user(user_id)
+
+            return success_response(
+                message="User retrieved successfully.",
+                data={
+                    "id": user.id,
+                    "username": user.username,
+                    "email": user.email,
+                    "role": user.role
+                }
+            )
+
+        except ValueError as error:
+            return error_response(
+                message=str(error),
+                status_code=404
+            )

@@ -600,3 +600,21 @@
 2026-07-09 18:00:17,446 | INFO | werkzeug | 127.0.0.1 - - [09/Jul/2026 18:00:17] "[35m[1mPOST /api/v1/auth/login HTTP/1.1[0m" 500 -
 2026-07-09 18:00:28,532 | INFO | enterprise-cicd | POST /api/v1/auth/login
 2026-07-09 18:00:28,560 | INFO | werkzeug | 127.0.0.1 - - [09/Jul/2026 18:00:28] "[35m[1mPOST /api/v1/auth/login HTTP/1.1[0m" 500 -
+2026-07-09 18:10:52,953 | INFO | enterprise-cicd | ======================================
+2026-07-09 18:10:52,955 | INFO | enterprise-cicd | Enterprise CI/CD Platform Started
+2026-07-09 18:10:52,955 | INFO | enterprise-cicd | Configuration Loaded Successfully
+2026-07-09 18:10:52,956 | INFO | enterprise-cicd | ======================================
+2026-07-09 18:10:53,205 | INFO | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 18:10:53,206 | INFO | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-09 18:10:53,214 | INFO | werkzeug |  * Restarting with stat
+2026-07-09 18:10:56,685 | INFO | enterprise-cicd | ======================================
+2026-07-09 18:10:56,685 | INFO | enterprise-cicd | Enterprise CI/CD Platform Started
+2026-07-09 18:10:56,685 | INFO | enterprise-cicd | Configuration Loaded Successfully
+2026-07-09 18:10:56,687 | INFO | enterprise-cicd | ======================================
+2026-07-09 18:10:56,774 | WARNING | werkzeug |  * Debugger is active!
+2026-07-09 18:10:56,792 | INFO | werkzeug |  * Debugger PIN: 572-038-087
+2026-07-09 18:11:33,018 | INFO | enterprise-cicd | GET /api/v1/users/1
+2026-07-09 18:11:33,021 | INFO | werkzeug | 127.0.0.1 - - [09/Jul/2026 18:11:33] "[31m[1mGET /api/v1/users/1 HTTP/1.1[0m" 401 -
+2026-07-09 18:12:01,488 | INFO | enterprise-cicd | GET /api/v1/users/999
+2026-07-09 18:12:01,491 | INFO | werkzeug | 127.0.0.1 - - [09/Jul/2026 18:12:01] "[31m[1mGET /api/v1/users/999 HTTP/1.1[0m" 401 -
