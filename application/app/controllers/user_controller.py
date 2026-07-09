@@ -1,10 +1,8 @@
 from flask import request
 from flask_jwt_extended import jwt_required
-
 from app.decorators.roles import roles_required
 from app.services.user_service import UserService
-from app.utils.response import success_response
-
+from app.utils.response import success_response, error_response
 
 class UserController:
     """
@@ -51,3 +49,55 @@ class UserController:
                 }
             }
         )
+
+    @staticmethod
+    @jwt_required()
+    @roles_required("ADMIN")
+    def create_user():
+
+        data = request.get_json()
+
+        if not data:
+            return error_response(
+                message="Request body must be JSON.",
+                status_code=400
+            )
+
+        required = [
+            "username",
+            "email",
+            "password",
+            "role"
+        ]
+
+        for field in required:
+            if not data.get(field):
+                return error_response(
+                    message=f"{field} is required.",
+                    status_code=400
+                )
+
+        try:
+            user = UserService.create_user(
+                username=data["username"],
+                email=data["email"],
+                password=data["password"],
+                role=data["role"]
+            )
+
+            return success_response(
+                message="User created successfully.",
+                data={
+                    "id": user.id,
+                    "username": user.username,
+                    "email": user.email,
+                    "role": user.role
+                },
+                status_code=201
+            )
+
+        except ValueError as error:
+            return error_response(
+                message=str(error),
+                status_code=400
+            )

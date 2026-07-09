@@ -53,3 +53,8 @@ class UserRepository:
             per_page=per_page,
             error_out=False
         )
+
+    @staticmethod
+    def update(user):
+        db.session.commit()
+        return user

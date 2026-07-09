@@ -576,3 +576,27 @@
 2026-07-09 17:31:34,572 | INFO | werkzeug | 127.0.0.1 - - [09/Jul/2026 17:31:34] "GET /api/v1/users?role=USER HTTP/1.1" 200 -
 2026-07-09 17:32:11,293 | INFO | enterprise-cicd | GET /api/v1/users
 2026-07-09 17:32:11,313 | INFO | werkzeug | 127.0.0.1 - - [09/Jul/2026 17:32:11] "[31m[1mGET /api/v1/users?search=sahil&page=1&per_page=5 HTTP/1.1[0m" 401 -
+2026-07-09 17:51:46,185 | INFO | enterprise-cicd | ======================================
+2026-07-09 17:51:46,187 | INFO | enterprise-cicd | Enterprise CI/CD Platform Started
+2026-07-09 17:51:46,188 | INFO | enterprise-cicd | Configuration Loaded Successfully
+2026-07-09 17:51:46,188 | INFO | enterprise-cicd | ======================================
+2026-07-09 17:51:46,422 | INFO | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-09 17:51:46,422 | INFO | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-09 17:51:46,429 | INFO | werkzeug |  * Restarting with stat
+2026-07-09 17:51:51,153 | INFO | enterprise-cicd | ======================================
+2026-07-09 17:51:51,154 | INFO | enterprise-cicd | Enterprise CI/CD Platform Started
+2026-07-09 17:51:51,155 | INFO | enterprise-cicd | Configuration Loaded Successfully
+2026-07-09 17:51:51,156 | INFO | enterprise-cicd | ======================================
+2026-07-09 17:51:51,297 | WARNING | werkzeug |  * Debugger is active!
+2026-07-09 17:51:51,330 | INFO | werkzeug |  * Debugger PIN: 572-038-087
+2026-07-09 17:55:52,581 | INFO | enterprise-cicd | POST /api/v1/auth/login
+2026-07-09 17:55:53,756 | INFO | werkzeug | 127.0.0.1 - - [09/Jul/2026 17:55:53] "POST /api/v1/auth/login HTTP/1.1" 200 -
+2026-07-09 17:57:15,038 | INFO | enterprise-cicd | POST /api/v1/users
+2026-07-09 17:57:15,085 | INFO | werkzeug | 127.0.0.1 - - [09/Jul/2026 17:57:15] "[31m[1mPOST /api/v1/users HTTP/1.1[0m" 401 -
+2026-07-09 18:00:05,663 | INFO | enterprise-cicd | POST /api/v1/auth/login
+2026-07-09 18:00:05,769 | INFO | werkzeug | 127.0.0.1 - - [09/Jul/2026 18:00:05] "[35m[1mPOST /api/v1/auth/login HTTP/1.1[0m" 500 -
+2026-07-09 18:00:17,427 | INFO | enterprise-cicd | POST /api/v1/auth/login
+2026-07-09 18:00:17,446 | INFO | werkzeug | 127.0.0.1 - - [09/Jul/2026 18:00:17] "[35m[1mPOST /api/v1/auth/login HTTP/1.1[0m" 500 -
+2026-07-09 18:00:28,532 | INFO | enterprise-cicd | POST /api/v1/auth/login
+2026-07-09 18:00:28,560 | INFO | werkzeug | 127.0.0.1 - - [09/Jul/2026 18:00:28] "[35m[1mPOST /api/v1/auth/login HTTP/1.1[0m" 500 -
