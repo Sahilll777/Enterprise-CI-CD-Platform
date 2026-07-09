@@ -43,3 +43,10 @@ def profile():
 )
 def refresh():
     return AuthController.refresh()
+
+@auth_bp.route(
+    "/admin",
+    methods=["GET"]
+)
+def admin_dashboard():
+    return AuthController.admin_dashboard()

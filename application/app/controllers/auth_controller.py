@@ -7,7 +7,7 @@ from flask_jwt_extended import (
 
 from app.services.auth_service import AuthService
 from app.utils.response import success_response, error_response
-
+from app.decorators.roles import roles_required
 
 class AuthController:
     """
@@ -183,6 +183,22 @@ class AuthController:
             message="Access token refreshed successfully.",
             data={
                 "access_token": access_token
+            },
+            status_code=200
+        )
+    
+    @staticmethod
+    @jwt_required()
+    @roles_required("ADMIN")
+    def admin_dashboard():
+        """
+        Example Admin endpoint.
+        """
+
+        return success_response(
+            message="Welcome Admin!",
+            data={
+                "dashboard": "Enterprise Admin Dashboard"
             },
             status_code=200
         )
