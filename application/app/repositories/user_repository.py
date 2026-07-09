@@ -14,21 +14,16 @@ class UserRepository:
 
     @staticmethod
     def get_by_email(email):
-        return User.query.filter_by(
-            email=email
-        ).first()
+        return User.query.filter_by(email=email).first()
 
     @staticmethod
     def get_by_username(username):
-        return User.query.filter_by(
-            username=username
-        ).first()
+        return User.query.filter_by(username=username).first()
 
     @staticmethod
     def create(user):
         db.session.add(user)
         db.session.commit()
-
         return user
 
     @staticmethod
@@ -37,13 +32,24 @@ class UserRepository:
         db.session.commit()
 
     @staticmethod
-    def get_all():
-        return User.query.all()
-    
-    @staticmethod
-    def get_by_id(user_id):
-       """
-       Retrieve a user by ID.
-       """
-       return db.session.get(User, int(user_id))
-    
+    def get_users(page, per_page, search=None, role=None):
+        query = User.query
+
+        if search:
+            query = query.filter(
+                db.or_(
+                    User.username.ilike(f"%{search}%"),
+                    User.email.ilike(f"%{search}%")
+                )
+            )
+
+        if role:
+            query = query.filter(
+                User.role == role.upper()
+            )
+
+        return query.order_by(User.id.asc()).paginate(
+            page=page,
+            per_page=per_page,
+            error_out=False
+        )
