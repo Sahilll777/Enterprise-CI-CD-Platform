@@ -33,17 +33,18 @@ pipeline {
             }
         }
 
-        stage('Python Version') {
+        stage('Environment Info') {
 
-            steps {
+    steps {
 
-                sh '''
-                    python3 --version || python --version
-                '''
-            }
-        }
-
+        sh '''
+            java -version
+            git --version
+            uname -a
+        '''
     }
+
+}
 
     post {
 
