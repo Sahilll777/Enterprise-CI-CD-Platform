@@ -28,3 +28,10 @@ def create_user():
 )
 def get_user(user_id):
     return UserController.get_user(user_id)
+
+@users_bp.route(
+    "/<int:user_id>",
+    methods=["PUT"]
+)
+def update_user(user_id):
+    return UserController.update_user(user_id)

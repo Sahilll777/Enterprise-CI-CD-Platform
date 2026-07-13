@@ -63,3 +63,55 @@ class UserService:
             raise ValueError("User not found.")
 
         return user
+
+    @staticmethod
+    def update_user(user_id, data):
+        """
+        Update an existing user.
+        """
+
+        user = UserRepository.get_by_id(user_id)
+
+        if not user:
+            raise ValueError("User not found.")
+
+        username = data.get("username")
+        email = data.get("email")
+        password = data.get("password")
+        role = data.get("role")
+
+        if username:
+
+            existing = UserRepository.get_by_username(username)
+
+            if existing and existing.id != user.id:
+                raise ValueError("Username already exists.")
+
+            user.username = username
+
+        if email:
+
+            existing = UserRepository.get_by_email(email)
+
+            if existing and existing.id != user.id:
+                raise ValueError("Email already exists.")
+
+            user.email = email
+
+        if password:
+
+            user.password_hash = generate_password_hash(password)
+
+        if role:
+
+            role = role.upper()
+
+            if role not in [
+                "ADMIN",
+                "USER"
+            ]:
+                raise ValueError("Invalid role.")
+
+            user.role = role
+
+        return UserRepository.update(user)

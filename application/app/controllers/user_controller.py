@@ -127,3 +127,39 @@ class UserController:
                 message=str(error),
                 status_code=404
             )
+    @staticmethod
+    @jwt_required()
+    @roles_required("ADMIN")
+    def update_user(user_id):
+
+        data = request.get_json()
+
+        if not data:
+            return error_response(
+                message="Request body must be JSON.",
+                status_code=400
+            )
+
+        try:
+
+            user = UserService.update_user(
+                user_id,
+                data
+            )
+
+            return success_response(
+                message="User updated successfully.",
+                data={
+                    "id": user.id,
+                    "username": user.username,
+                    "email": user.email,
+                    "role": user.role
+                }
+            )
+
+        except ValueError as error:
+
+            return error_response(
+                message=str(error),
+                status_code=400
+            )
