@@ -1,0 +1,76 @@
+# -----------------------------
+# Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual Environment
+venv/
+.env/
+.venv/
+
+# Environment Variables
+.env
+.env.*
+
+# Flask
+instance/
+.webassets-cache
+
+# SQLAlchemy
+*.db
+*.sqlite3
+
+# Alembic
+migrations/__pycache__/
+
+# Logs
+*.log
+logs/
+
+# Pytest
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Docker
+docker-compose.override.yml
+
+# Jenkins
+.jenkins/
+
+# SonarQube
+.scannerwork/
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# Temporary Files
+*.tmp
+*.bak
+*.swp
+
+# Secrets
+*.pem
+*.key
+*.crt
+
