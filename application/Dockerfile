@@ -35,10 +35,24 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
+# Create non-root user
+RUN groupadd -r appgroup && useradd -r -g appgroup appuser
+
+# Copy installed packages
 COPY --from=builder /install /usr/local
 
+# Copy application
 COPY . .
 
+# Set ownership
+RUN chown -R appuser:appgroup /app
+
+# Switch user
+USER appuser
+
 EXPOSE 5000
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
+CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/api/v1/health')"
 
 CMD ["python", "run.py"]
