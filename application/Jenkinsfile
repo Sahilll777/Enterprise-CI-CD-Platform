@@ -1,0 +1,65 @@
+pipeline {
+
+    agent any
+
+    options {
+        timestamps()
+        ansiColor('xterm')
+    }
+
+    environment {
+        APP_NAME = "Enterprise CI/CD Platform"
+    }
+
+    stages {
+
+        stage('Checkout') {
+
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Repository Info') {
+
+            steps {
+
+                echo "Repository checked out successfully."
+
+                sh '''
+                    pwd
+                    ls -la
+                '''
+            }
+        }
+
+        stage('Python Version') {
+
+            steps {
+
+                sh '''
+                    python3 --version || python --version
+                '''
+            }
+        }
+
+    }
+
+    post {
+
+        success {
+
+            echo "Pipeline completed successfully."
+        }
+
+        failure {
+
+            echo "Pipeline failed."
+        }
+
+        always {
+
+            cleanWs()
+        }
+    }
+}
