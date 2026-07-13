@@ -641,3 +641,144 @@
 2026-07-13 12:57:25,658 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 12:57:25] "[31m[1mPUT /api/v1/users HTTP/1.1[0m" 405 -
 2026-07-13 12:58:12,276 | INFO | enterprise-cicd | PUT /api/v1/auth/admin
 2026-07-13 12:58:12,277 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 12:58:12] "[31m[1mPUT /api/v1/auth/admin HTTP/1.1[0m" 405 -
+2026-07-13 13:30:04,913 | INFO | enterprise-cicd | ======================================
+2026-07-13 13:30:04,918 | INFO | enterprise-cicd | Enterprise CI/CD Platform Started
+2026-07-13 13:30:04,921 | INFO | enterprise-cicd | Configuration Loaded Successfully
+2026-07-13 13:30:04,922 | INFO | enterprise-cicd | ======================================
+2026-07-13 13:30:05,247 | INFO | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-13 13:30:05,249 | INFO | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-13 13:30:05,256 | INFO | werkzeug |  * Restarting with stat
+2026-07-13 13:30:08,419 | INFO | enterprise-cicd | ======================================
+2026-07-13 13:30:08,419 | INFO | enterprise-cicd | Enterprise CI/CD Platform Started
+2026-07-13 13:30:08,419 | INFO | enterprise-cicd | Configuration Loaded Successfully
+2026-07-13 13:30:08,421 | INFO | enterprise-cicd | ======================================
+2026-07-13 13:30:08,502 | WARNING | werkzeug |  * Debugger is active!
+2026-07-13 13:30:08,521 | INFO | werkzeug |  * Debugger PIN: 572-038-087
+2026-07-13 13:30:16,812 | INFO | enterprise-cicd | GET /apidocs/
+2026-07-13 13:30:16,963 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:30:16] "GET /apidocs/ HTTP/1.1" 200 -
+2026-07-13 13:30:17,119 | INFO | enterprise-cicd | GET /flasgger_static/swagger-ui.css
+2026-07-13 13:30:17,150 | INFO | enterprise-cicd | GET /flasgger_static/swagger-ui-bundle.js
+2026-07-13 13:30:17,152 | INFO | enterprise-cicd | GET /flasgger_static/swagger-ui-standalone-preset.js
+2026-07-13 13:30:17,157 | INFO | enterprise-cicd | GET /flasgger_static/lib/jquery.min.js
+2026-07-13 13:30:17,682 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:30:17] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 200 -
+2026-07-13 13:30:17,687 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:30:17] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+2026-07-13 13:30:17,702 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:30:17] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 200 -
+2026-07-13 13:30:17,712 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:30:17] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 200 -
+2026-07-13 13:30:18,053 | INFO | enterprise-cicd | GET /apispec_1.json
+2026-07-13 13:30:18,054 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:30:18] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-07-13 13:30:18,131 | INFO | enterprise-cicd | GET /flasgger_static/favicon-32x32.png
+2026-07-13 13:30:18,135 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:30:18] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 200 -
+2026-07-13 13:30:40,524 | INFO | enterprise-cicd | GET /apidocs/
+2026-07-13 13:30:40,526 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:30:40] "GET /apidocs/ HTTP/1.1" 200 -
+2026-07-13 13:30:40,605 | INFO | enterprise-cicd | GET /flasgger_static/swagger-ui.css
+2026-07-13 13:30:40,607 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:30:40] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 200 -
+2026-07-13 13:30:40,779 | INFO | enterprise-cicd | GET /flasgger_static/swagger-ui-bundle.js
+2026-07-13 13:30:40,780 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:30:40] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 200 -
+2026-07-13 13:30:40,924 | INFO | enterprise-cicd | GET /flasgger_static/swagger-ui-standalone-preset.js
+2026-07-13 13:30:40,926 | INFO | enterprise-cicd | GET /flasgger_static/lib/jquery.min.js
+2026-07-13 13:30:40,928 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:30:40] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+2026-07-13 13:30:40,929 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:30:40] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 200 -
+2026-07-13 13:30:41,340 | INFO | enterprise-cicd | GET /apispec_1.json
+2026-07-13 13:30:41,341 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:30:41] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-07-13 13:30:41,373 | INFO | enterprise-cicd | GET /flasgger_static/favicon-32x32.png
+2026-07-13 13:30:41,375 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:30:41] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 200 -
+2026-07-13 13:33:12,385 | INFO | werkzeug |  * Detected change in 'C:\\Users\\Sahil\\Desktop\\Enterprise-CICD-Platform\\application\\app\\api\\v1\\auth.py', reloading
+2026-07-13 13:33:14,099 | INFO | werkzeug |  * Restarting with stat
+2026-07-13 13:33:19,944 | INFO | enterprise-cicd | ======================================
+2026-07-13 13:33:19,944 | INFO | enterprise-cicd | Enterprise CI/CD Platform Started
+2026-07-13 13:33:19,944 | INFO | enterprise-cicd | Configuration Loaded Successfully
+2026-07-13 13:33:19,945 | INFO | enterprise-cicd | ======================================
+2026-07-13 13:33:20,036 | WARNING | werkzeug |  * Debugger is active!
+2026-07-13 13:33:20,052 | INFO | werkzeug |  * Debugger PIN: 572-038-087
+2026-07-13 13:33:43,197 | INFO | enterprise-cicd | ======================================
+2026-07-13 13:33:43,197 | INFO | enterprise-cicd | Enterprise CI/CD Platform Started
+2026-07-13 13:33:43,198 | INFO | enterprise-cicd | Configuration Loaded Successfully
+2026-07-13 13:33:43,198 | INFO | enterprise-cicd | ======================================
+2026-07-13 13:33:43,316 | INFO | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-13 13:33:43,317 | INFO | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-13 13:33:43,322 | INFO | werkzeug |  * Restarting with stat
+2026-07-13 13:33:46,084 | INFO | enterprise-cicd | ======================================
+2026-07-13 13:33:46,084 | INFO | enterprise-cicd | Enterprise CI/CD Platform Started
+2026-07-13 13:33:46,084 | INFO | enterprise-cicd | Configuration Loaded Successfully
+2026-07-13 13:33:46,086 | INFO | enterprise-cicd | ======================================
+2026-07-13 13:33:46,174 | WARNING | werkzeug |  * Debugger is active!
+2026-07-13 13:33:46,183 | INFO | werkzeug |  * Debugger PIN: 572-038-087
+2026-07-13 13:34:44,558 | INFO | enterprise-cicd | GET /apidocs/
+2026-07-13 13:34:44,663 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:34:44] "GET /apidocs/ HTTP/1.1" 200 -
+2026-07-13 13:34:44,764 | INFO | enterprise-cicd | GET /flasgger_static/swagger-ui.css
+2026-07-13 13:34:44,794 | INFO | enterprise-cicd | GET /flasgger_static/swagger-ui-bundle.js
+2026-07-13 13:34:45,076 | INFO | enterprise-cicd | GET /flasgger_static/swagger-ui-standalone-preset.js
+2026-07-13 13:34:45,078 | INFO | enterprise-cicd | GET /flasgger_static/lib/jquery.min.js
+2026-07-13 13:34:45,092 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:34:45] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
+2026-07-13 13:34:45,103 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:34:45] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+2026-07-13 13:34:45,335 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:34:45] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
+2026-07-13 13:34:45,344 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:34:45] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+2026-07-13 13:34:45,771 | INFO | enterprise-cicd | GET /apispec_1.json
+2026-07-13 13:34:45,780 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:34:45] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-07-13 13:37:09,949 | INFO | werkzeug |  * Detected change in 'C:\\Users\\Sahil\\Desktop\\Enterprise-CICD-Platform\\application\\app\\api\\v1\\auth.py', reloading
+2026-07-13 13:37:28,675 | INFO | enterprise-cicd | ======================================
+2026-07-13 13:37:28,677 | INFO | enterprise-cicd | Enterprise CI/CD Platform Started
+2026-07-13 13:37:28,677 | INFO | enterprise-cicd | Configuration Loaded Successfully
+2026-07-13 13:37:28,677 | INFO | enterprise-cicd | ======================================
+2026-07-13 13:37:28,841 | INFO | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-13 13:37:28,843 | INFO | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-13 13:37:28,848 | INFO | werkzeug |  * Restarting with stat
+2026-07-13 13:37:31,760 | INFO | enterprise-cicd | ======================================
+2026-07-13 13:37:31,761 | INFO | enterprise-cicd | Enterprise CI/CD Platform Started
+2026-07-13 13:37:31,761 | INFO | enterprise-cicd | Configuration Loaded Successfully
+2026-07-13 13:37:31,761 | INFO | enterprise-cicd | ======================================
+2026-07-13 13:37:31,844 | WARNING | werkzeug |  * Debugger is active!
+2026-07-13 13:37:31,862 | INFO | werkzeug |  * Debugger PIN: 572-038-087
+2026-07-13 13:38:08,364 | INFO | enterprise-cicd | GET /apidocs/
+2026-07-13 13:38:08,415 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:38:08] "GET /apidocs/ HTTP/1.1" 200 -
+2026-07-13 13:38:08,670 | INFO | enterprise-cicd | GET /flasgger_static/swagger-ui.css
+2026-07-13 13:38:08,673 | INFO | enterprise-cicd | GET /flasgger_static/swagger-ui-bundle.js
+2026-07-13 13:38:08,975 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:38:08] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+2026-07-13 13:38:08,977 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:38:08] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
+2026-07-13 13:38:08,980 | INFO | enterprise-cicd | GET /flasgger_static/swagger-ui-standalone-preset.js
+2026-07-13 13:38:08,981 | INFO | enterprise-cicd | GET /flasgger_static/lib/jquery.min.js
+2026-07-13 13:38:08,985 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:38:08] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+2026-07-13 13:38:08,989 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:38:08] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
+2026-07-13 13:38:09,791 | INFO | enterprise-cicd | GET /apispec_1.json
+2026-07-13 13:38:09,825 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:38:09] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-07-13 13:38:09,850 | INFO | enterprise-cicd | GET /flasgger_static/favicon-32x32.png
+2026-07-13 13:38:09,876 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:38:09] "[36mGET /flasgger_static/favicon-32x32.png HTTP/1.1[0m" 304 -
+2026-07-13 13:38:30,261 | INFO | enterprise-cicd | POST /api/v1/auth/login
+2026-07-13 13:38:31,354 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:38:31] "POST /api/v1/auth/login HTTP/1.1" 200 -
+2026-07-13 13:40:54,891 | INFO | werkzeug |  * Detected change in 'C:\\Users\\Sahil\\Desktop\\Enterprise-CICD-Platform\\application\\app\\swagger.py', reloading
+2026-07-13 13:40:56,179 | INFO | werkzeug |  * Restarting with stat
+2026-07-13 13:42:47,058 | INFO | enterprise-cicd | ======================================
+2026-07-13 13:42:47,060 | INFO | enterprise-cicd | Enterprise CI/CD Platform Started
+2026-07-13 13:42:47,061 | INFO | enterprise-cicd | Configuration Loaded Successfully
+2026-07-13 13:42:47,062 | INFO | enterprise-cicd | ======================================
+2026-07-13 13:42:47,254 | INFO | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-13 13:42:47,255 | INFO | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-13 13:42:47,260 | INFO | werkzeug |  * Restarting with stat
+2026-07-13 13:42:52,112 | INFO | enterprise-cicd | ======================================
+2026-07-13 13:42:52,114 | INFO | enterprise-cicd | Enterprise CI/CD Platform Started
+2026-07-13 13:42:52,117 | INFO | enterprise-cicd | Configuration Loaded Successfully
+2026-07-13 13:42:52,119 | INFO | enterprise-cicd | ======================================
+2026-07-13 13:42:52,357 | WARNING | werkzeug |  * Debugger is active!
+2026-07-13 13:42:52,415 | INFO | werkzeug |  * Debugger PIN: 572-038-087
+2026-07-13 13:42:53,297 | INFO | enterprise-cicd | GET /apidocs/
+2026-07-13 13:42:53,348 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:42:53] "GET /apidocs/ HTTP/1.1" 200 -
+2026-07-13 13:42:53,499 | INFO | enterprise-cicd | GET /flasgger_static/swagger-ui.css
+2026-07-13 13:42:53,567 | INFO | enterprise-cicd | GET /flasgger_static/swagger-ui-bundle.js
+2026-07-13 13:42:53,827 | INFO | enterprise-cicd | GET /flasgger_static/swagger-ui-standalone-preset.js
+2026-07-13 13:42:53,839 | INFO | enterprise-cicd | GET /flasgger_static/lib/jquery.min.js
+2026-07-13 13:42:54,481 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:42:54] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
+2026-07-13 13:42:54,523 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:42:54] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+2026-07-13 13:42:54,607 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:42:54] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+2026-07-13 13:42:54,619 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:42:54] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
+2026-07-13 13:42:55,305 | INFO | enterprise-cicd | GET /apispec_1.json
+2026-07-13 13:42:55,331 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:42:55] "GET /apispec_1.json HTTP/1.1" 200 -
+2026-07-13 13:44:01,058 | INFO | enterprise-cicd | POST /api/v1/auth/login
+2026-07-13 13:44:01,952 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:44:01] "POST /api/v1/auth/login HTTP/1.1" 200 -
+2026-07-13 13:45:37,660 | INFO | enterprise-cicd | GET /api/v1/auth/profile
+2026-07-13 13:45:37,799 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:45:37] "GET /api/v1/auth/profile HTTP/1.1" 200 -
+2026-07-13 13:46:19,082 | INFO | enterprise-cicd | POST /api/v1/auth/login
+2026-07-13 13:46:19,431 | INFO | werkzeug | 127.0.0.1 - - [13/Jul/2026 13:46:19] "POST /api/v1/auth/login HTTP/1.1" 200 -

@@ -9,6 +9,7 @@ from app.api.v1.auth import auth_bp
 from app.extensions import db, migrate, jwt
 from app.jwt_handlers import register_jwt_handlers
 from app.api.v1.users import users_bp
+from app.swagger import configure_swagger
 
 def create_app():
     app = Flask(__name__)
@@ -28,7 +29,8 @@ def create_app():
     migrate.init_app(app, db)
     jwt.init_app(app)
     register_jwt_handlers(jwt)
-
+    configure_swagger(app)
+    
     # Configure logger
     logger = configure_logging()
 
