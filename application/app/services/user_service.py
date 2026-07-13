@@ -115,3 +115,19 @@ class UserService:
             user.role = role
 
         return UserRepository.update(user)
+
+    @staticmethod
+    def delete_user(user_id, current_user_id):
+        """
+        Delete a user.
+        """
+
+        if int(user_id) == int(current_user_id):
+            raise ValueError("You cannot delete your own account.")
+
+        user = UserRepository.get_by_id(user_id)
+
+        if not user:
+            raise ValueError("User not found.")
+
+        UserRepository.delete(user)

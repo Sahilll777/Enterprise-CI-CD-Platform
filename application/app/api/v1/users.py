@@ -35,3 +35,10 @@ def get_user(user_id):
 )
 def update_user(user_id):
     return UserController.update_user(user_id)
+
+@users_bp.route(
+    "/<int:user_id>",
+    methods=["DELETE"]
+)
+def delete_user(user_id):
+    return UserController.delete_user(user_id)

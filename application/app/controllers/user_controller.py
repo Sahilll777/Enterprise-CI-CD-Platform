@@ -1,5 +1,5 @@
 from flask import request
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import jwt_required, get_jwt_identity
 from app.decorators.roles import roles_required
 from app.services.user_service import UserService
 from app.utils.response import success_response, error_response
@@ -158,6 +158,38 @@ class UserController:
             )
 
         except ValueError as error:
+
+            return error_response(
+                message=str(error),
+                status_code=400
+            )
+        
+    @staticmethod
+    @jwt_required()
+    @roles_required("ADMIN")
+    def delete_user(user_id):
+        """
+        Delete a user.
+        """
+
+        try:
+            current_user_id = get_jwt_identity()
+
+            UserService.delete_user(
+                user_id,
+                current_user_id
+            )
+
+            return success_response(
+                message="User deleted successfully."
+            )
+
+        except ValueError as error:
+            if str(error) == "User not found.":
+                return error_response(
+                    message=str(error),
+                    status_code=404
+                )
 
             return error_response(
                 message=str(error),
