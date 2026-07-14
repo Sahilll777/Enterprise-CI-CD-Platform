@@ -14,103 +14,139 @@ pipeline {
 
     environment {
         APP_NAME = "Enterprise CI/CD Platform"
+        APP_DIR  = "application"
     }
 
     stages {
 
         stage('Checkout') {
-
             steps {
                 checkout scm
             }
         }
 
-        stage('Repository Info') {
-
+        stage('Repository Information') {
             steps {
-                echo "Repository checked out successfully."
+                sh """
+                    echo "===== Repository Information ====="
 
-                sh '''
                     pwd
+
                     ls -la
-                '''
+
+                    ls -la ${APP_DIR}
+                """
             }
         }
 
-        stage('Python Version') {
-
+        stage('Python Information') {
             steps {
-                sh '''
+                sh """
                     python --version
                     pip --version
-                '''
+                """
             }
         }
 
         stage('Create Virtual Environment') {
-
             steps {
-                sh '''
+                sh """
+                    cd ${APP_DIR}
+
                     python -m venv venv
 
                     . venv/bin/activate
 
                     python --version
-                '''
+                """
             }
         }
 
         stage('Install Dependencies') {
-
             steps {
-                sh '''
+                sh """
+                    cd ${APP_DIR}
+
                     . venv/bin/activate
 
                     pip install --upgrade pip
 
                     pip install -r requirements.txt
-                '''
+                """
             }
         }
 
         stage('Environment Validation') {
-
             steps {
-                sh '''
+                sh """
+                    cd ${APP_DIR}
+
                     . venv/bin/activate
 
                     pip list
-                '''
+                """
             }
         }
 
         stage('Flask Validation') {
-
             steps {
-                sh '''
+                sh """
+                    cd ${APP_DIR}
+
                     . venv/bin/activate
 
                     python -c "from app import create_app; create_app(); print('Flask Application Loaded Successfully')"
-                '''
+                """
             }
         }
 
+        stage('Run Unit Tests') {
+            steps {
+                sh """
+                    cd ${APP_DIR}
+
+                    . venv/bin/activate
+
+                    pytest tests \
+                        --cov=app \
+                        --cov-report=xml \
+                        --cov-report=html \
+                        -v
+                """
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                sh """
+                    cd ${APP_DIR}
+
+                    docker build \
+                        -t enterprise-cicd-platform:${BUILD_NUMBER} .
+                """
+            }
+        }
     }
 
     post {
 
         success {
+
             echo 'Pipeline completed successfully.'
+
+            archiveArtifacts artifacts: 'application/coverage.xml', fingerprint: true
+
+            archiveArtifacts artifacts: 'application/htmlcov/**', fingerprint: true
         }
 
         failure {
+
             echo 'Pipeline failed.'
         }
 
         always {
-            cleanWs()
+
+            echo 'Pipeline finished.'
         }
-
     }
-
 }
