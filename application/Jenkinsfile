@@ -1,6 +1,11 @@
 pipeline {
 
-    agent any
+    agent {
+        docker {
+            image 'python:3.12-slim'
+            args '-u root'
+        }
+    }
 
     options {
         timestamps()
@@ -14,12 +19,14 @@ pipeline {
     stages {
 
         stage('Checkout') {
+
             steps {
                 checkout scm
             }
         }
 
         stage('Repository Info') {
+
             steps {
                 echo "Repository checked out successfully."
 
@@ -30,30 +37,80 @@ pipeline {
             }
         }
 
-        stage('Environment Info') {
+        stage('Python Version') {
+
             steps {
                 sh '''
-                    java -version
-                    git --version
-                    uname -a
+                    python --version
+                    pip --version
                 '''
             }
         }
 
-    }   // <-- This was missing
+        stage('Create Virtual Environment') {
+
+            steps {
+                sh '''
+                    python -m venv venv
+
+                    . venv/bin/activate
+
+                    python --version
+                '''
+            }
+        }
+
+        stage('Install Dependencies') {
+
+            steps {
+                sh '''
+                    . venv/bin/activate
+
+                    pip install --upgrade pip
+
+                    pip install -r requirements.txt
+                '''
+            }
+        }
+
+        stage('Environment Validation') {
+
+            steps {
+                sh '''
+                    . venv/bin/activate
+
+                    pip list
+                '''
+            }
+        }
+
+        stage('Flask Validation') {
+
+            steps {
+                sh '''
+                    . venv/bin/activate
+
+                    python -c "from app import create_app; create_app(); print('Flask Application Loaded Successfully')"
+                '''
+            }
+        }
+
+    }
 
     post {
 
         success {
-            echo "Pipeline completed successfully."
+            echo 'Pipeline completed successfully.'
         }
 
         failure {
-            echo "Pipeline failed."
+            echo 'Pipeline failed.'
         }
 
         always {
             cleanWs()
         }
+
     }
+
 }
