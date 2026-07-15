@@ -5,6 +5,7 @@ LABEL project="Enterprise CI/CD Platform"
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+# Install Docker CLI and required tools
 RUN apt-get update && \
     apt-get install -y \
         docker.io \
@@ -16,16 +17,25 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Create Docker CLI plugins directory
+RUN mkdir -p /usr/libexec/docker/cli-plugins
+
 # Install Docker Compose Plugin
-RUN mkdir -p /usr/libexec/docker/cli-plugins && \
-    curl -SL https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64 \
+RUN curl -SL \
+    https://github.com/docker/compose/releases/download/v2.39.1/docker-compose-linux-x86_64 \
     -o /usr/libexec/docker/cli-plugins/docker-compose && \
     chmod +x /usr/libexec/docker/cli-plugins/docker-compose
 
-RUN docker --version
+# Install Docker Buildx Plugin
+RUN curl -SL \
+    https://github.com/docker/buildx/releases/download/v0.28.0/buildx-v0.28.0.linux-amd64 \
+    -o /usr/libexec/docker/cli-plugins/docker-buildx && \
+    chmod +x /usr/libexec/docker/cli-plugins/docker-buildx
+
+# Tell Docker where CLI plugins are located
+ENV DOCKER_CLI_PLUGIN_EXTRA_DIRS=/usr/libexec/docker/cli-plugins
 
 RUN python --version
-
 RUN pip install --upgrade pip
 
 WORKDIR /workspace
