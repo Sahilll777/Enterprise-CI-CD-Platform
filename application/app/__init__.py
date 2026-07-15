@@ -10,6 +10,7 @@ from app.extensions import db, migrate, jwt
 from app.jwt_handlers import register_jwt_handlers
 from app.api.v1.users import users_bp
 from app.swagger import configure_swagger
+from prometheus_client import generate_latest, CONTENT_TYPE_LATEST
 
 def create_app():
     app = Flask(__name__)
@@ -42,6 +43,12 @@ def create_app():
     @app.before_request
     def before_request():
         logger.info(f"{request.method} {request.path}")
+
+    @app.route("/metrics")
+    def metrics():
+        return generate_latest(), 200, {
+            "Content-Type": CONTENT_TYPE_LATEST
+        }
 
     @app.route("/")
     def home():
