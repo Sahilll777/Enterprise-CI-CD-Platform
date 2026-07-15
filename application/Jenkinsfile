@@ -118,7 +118,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                dir('application') {
+                dir("${APP_DIR}") {
                     sh '''
                         docker version
 
@@ -126,6 +126,30 @@ pipeline {
                             -t enterprise-cicd-platform:${BUILD_NUMBER} .
                     '''
                 }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                dir("${APP_DIR}") {
+                    sh '''
+                        echo "===== Deploying Application ====="
+
+                        docker compose up -d --build flask-api
+                    '''
+                }
+            }
+        }
+
+        stage('Health Check') {
+            steps {
+                sh '''
+                    echo "Waiting for application to become healthy..."
+
+                    sleep 10
+
+                    curl --fail http://host.docker.internal:5000/api/v1/health
+                '''
             }
         }
     }
